@@ -1,10 +1,24 @@
+import { useState, useEffect } from 'react';
 import GlassButton from "@/components/GlassButton";
 import SocialIcon from "@/components/SocialIcon";
+import Loader from "@/components/Loader";
 import { SiInstagram, SiLinkedin, SiPinterest, SiWhatsapp } from 'react-icons/si';
 import { Store } from 'lucide-react';
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
+    <>
+      <Loader />
     <div 
       className="relative min-h-screen overflow-hidden"
       style={{
@@ -17,13 +31,18 @@ export default function Home() {
           background: 'radial-gradient(circle at 50% 20%, rgba(255, 49, 49, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 49, 49, 0.08) 0%, transparent 50%)',
         }}
       />
-      <div className="relative flex min-h-screen flex-col items-center justify-center px-6 py-12">
+      <div 
+        className="relative flex min-h-screen flex-col items-center justify-center px-6 py-12 transition-opacity duration-500"
+        style={{
+          opacity: showContent ? 1 : 0,
+        }}
+      >
         <div className="w-full max-w-md">
           <div 
             className="mb-8 flex flex-col items-center gap-3"
             data-testid="logo-container"
             style={{
-              animation: 'fadeIn 0.6s ease-out',
+              animation: showContent ? 'fadeIn 0.6s ease-out' : 'none',
             }}
           >
             <div className="relative">
@@ -50,7 +69,7 @@ export default function Home() {
           <div 
             className="space-y-3"
             style={{
-              animation: 'fadeIn 0.6s ease-out 0.1s backwards',
+              animation: showContent ? 'fadeIn 0.6s ease-out 0.1s backwards' : 'none',
             }}
           >
             <GlassButton 
@@ -79,7 +98,7 @@ export default function Home() {
             className="mt-10 flex justify-center gap-3"
             data-testid="social-icons"
             style={{
-              animation: 'fadeIn 0.6s ease-out 0.2s backwards',
+              animation: showContent ? 'fadeIn 0.6s ease-out 0.2s backwards' : 'none',
             }}
           >
             <SocialIcon
@@ -114,5 +133,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </>
   );
 }
