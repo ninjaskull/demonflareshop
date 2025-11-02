@@ -8,9 +8,15 @@ export default function Home() {
     <div 
       className="relative min-h-screen overflow-hidden"
       style={{
-        background: 'radial-gradient(circle at center, rgba(255, 49, 49, 0.05) 0%, #0e0e10 60%)',
+        background: 'linear-gradient(135deg, #0a0a0c 0%, #0e0e10 50%, #12080a 100%)',
       }}
     >
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: 'radial-gradient(circle at 50% 20%, rgba(255, 49, 49, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 49, 49, 0.08) 0%, transparent 50%)',
+        }}
+      />
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div 
@@ -20,14 +26,22 @@ export default function Home() {
               animation: 'fadeIn 0.6s ease-out',
             }}
           >
-            <img
-              src="https://demonflare.com/cdn/shop/files/DemonFlare_logo_white_190x.png"
-              alt="DemonFlare"
-              className="h-auto w-24"
-              data-testid="img-logo"
-            />
+            <div className="relative">
+              <div 
+                className="absolute inset-0 scale-110 blur-2xl opacity-20"
+                style={{
+                  background: 'radial-gradient(circle, rgba(255, 49, 49, 0.4) 0%, transparent 70%)',
+                }}
+              />
+              <img
+                src="https://demonflare.com/cdn/shop/files/DemonFlare_logo_white_190x.png"
+                alt="DemonFlare"
+                className="relative h-auto w-24 drop-shadow-2xl"
+                data-testid="img-logo"
+              />
+            </div>
             <div className="text-center">
-              <p className="text-xs font-medium text-white/60">
+              <p className="text-xs font-medium tracking-wide text-white/70">
                 Premium Collectibles and Community
               </p>
             </div>
