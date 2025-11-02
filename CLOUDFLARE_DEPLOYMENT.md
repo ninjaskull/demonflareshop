@@ -16,10 +16,14 @@ This is a static React website that can be easily deployed to Cloudflare Pages.
    - Select the repository for this project
 
 3. **Configure Build Settings**
-   - **Framework preset**: None (or Vite)
-   - **Build command**: `npm run build`
+   - **Framework preset**: Vite (or None)
+   - **Build command**: `npx vite build`
    - **Build output directory**: `dist/public`
-   - **Node version**: 20 or higher
+   - **Root directory**: Leave blank or `/`
+   - **Deploy command** (if required): `echo "Deployment complete"`
+   
+   **Environment Variables** (add these in the settings):
+   - `NODE_VERSION`: `20`
 
 4. **Deploy**
    - Click "Save and Deploy"
@@ -39,19 +43,19 @@ This is a static React website that can be easily deployed to Cloudflare Pages.
 
 3. **Build the site**
    ```bash
-   npm run build
+   npx vite build
    ```
 
 4. **Deploy**
    ```bash
-   wrangler pages deploy dist/public --project-name=demonflare-links
+   npx wrangler pages deploy dist/public --project-name=demonflare-links
    ```
 
 ## Local Development
 
 Run the development server:
 ```bash
-npm run dev
+npx vite
 ```
 
 The site will be available at `http://localhost:5173`
@@ -60,8 +64,8 @@ The site will be available at `http://localhost:5173`
 
 Build and preview the production build locally:
 ```bash
-npm run build
-npm run preview
+npx vite build
+npx vite preview
 ```
 
 ## Project Structure

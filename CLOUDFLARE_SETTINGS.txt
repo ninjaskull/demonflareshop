@@ -1,0 +1,35 @@
+╔════════════════════════════════════════════════════════════╗
+║          CLOUDFLARE PAGES SETTINGS - COPY THESE            ║
+╚════════════════════════════════════════════════════════════╝
+
+QUICK REFERENCE - Use these exact values in Cloudflare Pages:
+
+┌─────────────────────────────────────────────────────────┐
+│ BUILD CONFIGURATION                                      │
+└─────────────────────────────────────────────────────────┘
+
+Framework preset:        Vite (or None)
+Root directory:          [leave blank] or /
+Build command:           npx vite build
+Build output directory:  dist/public
+Deploy command:          echo "Deployment complete"
+
+┌─────────────────────────────────────────────────────────┐
+│ ENVIRONMENT VARIABLES                                    │
+└─────────────────────────────────────────────────────────┘
+
+NODE_VERSION = 20
+
+┌─────────────────────────────────────────────────────────┐
+│ IMPORTANT NOTES                                          │
+└─────────────────────────────────────────────────────────┘
+
+✓ Use "npx vite build" NOT "npm run build"
+✓ Output directory is "dist/public" NOT "dist"
+✓ Root directory should be BLANK or /
+✓ NODE_VERSION should be set to 20 in environment variables
+
+After deployment, your site will be available at:
+https://your-project-name.pages.dev
+
+For full documentation, see CLOUDFLARE_DEPLOYMENT.md
