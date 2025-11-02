@@ -7,17 +7,17 @@ export default function SocialIconExample() {
       <div className="flex gap-4">
         <SocialIcon 
           href="https://instagram.com" 
-          icon={<SiInstagram className="h-5 w-5" />}
+          icon={<SiInstagram className="h-4 w-4" />}
           label="Instagram"
         />
         <SocialIcon 
           href="https://linkedin.com" 
-          icon={<SiLinkedin className="h-5 w-5" />}
+          icon={<SiLinkedin className="h-4 w-4" />}
           label="LinkedIn"
         />
         <SocialIcon 
           href="https://pinterest.com" 
-          icon={<SiPinterest className="h-5 w-5" />}
+          icon={<SiPinterest className="h-4 w-4" />}
           label="Pinterest"
         />
       </div>

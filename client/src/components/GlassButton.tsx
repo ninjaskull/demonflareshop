@@ -1,9 +1,7 @@
-import { ArrowRight } from "lucide-react";
-
 interface GlassButtonProps {
   href: string;
   children: React.ReactNode;
-  icon?: React.ReactNode;
+  icon: React.ReactNode;
 }
 
 export default function GlassButton({ href, children, icon }: GlassButtonProps) {
@@ -15,19 +13,19 @@ export default function GlassButton({ href, children, icon }: GlassButtonProps) 
       data-testid={`link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       className="group relative block w-full"
     >
-      <div className="relative overflow-visible rounded-2xl border border-white/15 bg-white/10 px-8 py-5 shadow-lg transition-all duration-300 hover-elevate active-elevate-2"
+      <div className="relative overflow-visible rounded-2xl border border-white/10 bg-white/[0.08] px-6 py-4 shadow-lg transition-all duration-300 hover-elevate active-elevate-2"
         style={{
           backdropFilter: 'blur(20px) saturate(180%)',
           WebkitBackdropFilter: 'blur(20px) saturate(180%)',
         }}
       >
-        <div className="flex items-center justify-between">
-          <span className="text-base font-semibold text-white sm:text-lg">
+        <div className="flex items-center gap-4">
+          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center text-xl">
+            {icon}
+          </div>
+          <span className="text-sm font-medium text-white/95">
             {children}
           </span>
-          <div className="flex-shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1">
-            {icon || <ArrowRight className="h-5 w-5" />}
-          </div>
         </div>
       </div>
     </a>
