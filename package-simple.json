@@ -1,0 +1,13 @@
+{
+  "name": "demonflare-static",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Simple static HTML website for DemonFlare",
+  "scripts": {
+    "start": "node serve.js",
+    "test": "echo 'Opening index.html...' && python3 -m http.server 8000 || python -m SimpleHTTPServer 8000"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

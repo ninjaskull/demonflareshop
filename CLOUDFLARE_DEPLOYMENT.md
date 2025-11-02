@@ -1,6 +1,13 @@
 # Cloudflare Pages Deployment Guide
 
-This is a static React website that can be easily deployed to Cloudflare Pages.
+This is a **fully static** React website optimized for Cloudflare Pages deployment.
+
+## ✨ Features
+- 100% static - no backend/server required
+- Single command build: `vite build`
+- Optimized for Cloudflare Pages
+- Includes SPA routing configuration
+- Mobile-first responsive design
 
 ## Quick Deploy
 
@@ -16,11 +23,10 @@ This is a static React website that can be easily deployed to Cloudflare Pages.
    - Select the repository for this project
 
 3. **Configure Build Settings**
-   - **Framework preset**: Vite (or None)
-   - **Build command**: `npx vite build`
+   - **Framework preset**: Vite
+   - **Build command**: `vite build`
    - **Build output directory**: `dist/public`
-   - **Root directory**: Leave blank or `/`
-   - **Deploy command** (if required): `echo "Deployment complete"`
+   - **Root directory**: `/` (or leave blank)
    
    **Environment Variables** (add these in the settings):
    - `NODE_VERSION`: `20`
@@ -43,19 +49,23 @@ This is a static React website that can be easily deployed to Cloudflare Pages.
 
 3. **Build the site**
    ```bash
-   npx vite build
+   vite build
+   ```
+   Or use the build script:
+   ```bash
+   sh build.sh
    ```
 
 4. **Deploy**
    ```bash
-   npx wrangler pages deploy dist/public --project-name=demonflare-links
+   wrangler pages deploy dist/public --project-name=demonflare-links
    ```
 
 ## Local Development
 
 Run the development server:
 ```bash
-npx vite
+vite
 ```
 
 The site will be available at `http://localhost:5173`
@@ -64,8 +74,14 @@ The site will be available at `http://localhost:5173`
 
 Build and preview the production build locally:
 ```bash
-npx vite build
-npx vite preview
+vite build
+vite preview
+```
+
+Or use the build script:
+```bash
+sh build.sh
+vite preview
 ```
 
 ## Project Structure
