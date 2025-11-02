@@ -28,7 +28,7 @@ export default function Home() {
             />
             <div className="text-center">
               <p className="text-xs font-medium text-white/60">
-                Premium Streetwear & Community
+                Premium Collectibles and Community
               </p>
             </div>
           </div>
