@@ -34,9 +34,33 @@ export default function Home() {
           </div>
 
           <div 
-            className="space-y-3"
+            className="mb-8 flex justify-center gap-3"
+            data-testid="social-icons"
             style={{
               animation: 'fadeIn 0.6s ease-out 0.1s backwards',
+            }}
+          >
+            <SocialIcon
+              href="https://www.instagram.com/demonflare.shop"
+              icon={<SiInstagram className="h-4 w-4" />}
+              label="Instagram"
+            />
+            <SocialIcon
+              href="https://www.linkedin.com/company/thedemonflare"
+              icon={<SiLinkedin className="h-4 w-4" />}
+              label="LinkedIn"
+            />
+            <SocialIcon
+              href="https://in.pinterest.com/thedemonflare/"
+              icon={<SiPinterest className="h-4 w-4" />}
+              label="Pinterest"
+            />
+          </div>
+
+          <div 
+            className="space-y-3"
+            style={{
+              animation: 'fadeIn 0.6s ease-out 0.2s backwards',
             }}
           >
             <GlassButton 
@@ -59,30 +83,6 @@ export default function Home() {
             >
               Visit DemonFlare Store
             </GlassButton>
-          </div>
-
-          <div 
-            className="mt-10 flex justify-center gap-3"
-            data-testid="social-icons"
-            style={{
-              animation: 'fadeIn 0.6s ease-out 0.2s backwards',
-            }}
-          >
-            <SocialIcon
-              href="https://www.instagram.com/demonflare.shop"
-              icon={<SiInstagram className="h-4 w-4" />}
-              label="Instagram"
-            />
-            <SocialIcon
-              href="https://www.linkedin.com/company/thedemonflare"
-              icon={<SiLinkedin className="h-4 w-4" />}
-              label="LinkedIn"
-            />
-            <SocialIcon
-              href="https://in.pinterest.com/thedemonflare/"
-              icon={<SiPinterest className="h-4 w-4" />}
-              label="Pinterest"
-            />
           </div>
         </div>
       </div>
